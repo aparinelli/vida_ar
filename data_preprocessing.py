@@ -67,6 +67,7 @@ new_df = new_df.reset_index(drop=True)
 
 soda_vegs_df = new_df
 
+# Translate to english
 soda_vegs_df = soda_vegs_df.replace({
                         'Soda': {
                             '1 a 3 veces durante los últimos 7 días': '1 to 3 times in the last week',
@@ -78,6 +79,7 @@ soda_vegs_df = soda_vegs_df.replace({
                             'No tomé gaseosas en los últimos 7 días': 'I didn\'t drink any soda in the last week'
                         }})
 
+# Translate to english
 soda_vegs_df = soda_vegs_df.replace({
                         'Vegs': {
                             '1 a 3 veces durante los últimos 7 días': '1 to 3 times in the last week',
@@ -88,6 +90,9 @@ soda_vegs_df = soda_vegs_df.replace({
                             '4 o más veces al día': '4 or more times a day',
                             'No comí verduras ni hortalizas durante los últimos 7 días': 'I didn\'t eat any vegetables in the last week'
                         }})
+
+
+
 
 alcohol_df = df.groupby(['texto_q2', 'texto_q34']).size().to_frame().reset_index()
 
@@ -103,6 +108,7 @@ alcohol_df = alcohol_df.rename(columns={
                         alcohol_df.columns[2]: 'count'
 })
 
+# Translate
 alcohol_df = alcohol_df.replace({
                         'sex': {
                             'Femenino': 'Female',
@@ -110,6 +116,7 @@ alcohol_df = alcohol_df.replace({
                         }
 })
 
+# Translate
 alcohol_df = alcohol_df.replace({
                         'alcohol': {
                             '10 o 11 años': '10 or 11 years old',
