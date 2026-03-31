@@ -148,8 +148,8 @@ def create_app():
 
 # ---------- ENTRY POINT ----------
 
-app = create_app()
-application = app.server
 
 if __name__ == '__main__':
+    app = create_app()
+    application = app.server
     app.run(debug=True, port=8080)
