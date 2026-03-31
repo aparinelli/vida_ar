@@ -32,13 +32,13 @@ fruits_df = fruits_df.replace({'fruit': {
 }})
 fruits_df = fruits_df.drop([7])
 
-
-# select soda and veg columns
-soda_vegs_df = df.iloc[:, [105, 107]]
-
-# get unique column combinations and convert to dataframe
-soda_vegs_df = soda_vegs_df.groupby(['texto_q63', 'texto_q62']).size().to_frame().reset_index()
-
+soda_vegs_df = df[['texto_q63', 'texto_q62']]
+soda_vegs_df = (
+    soda_vegs_df
+    .groupby(['texto_q63', 'texto_q62'])
+    .size()
+    .reset_index(name='count')
+)
 
 # rename columns
 soda_vegs_df = soda_vegs_df.rename(columns={soda_vegs_df.columns[0]: 'Soda',soda_vegs_df.columns[1]: 'Vegs', soda_vegs_df.columns[2]: 'count'})
