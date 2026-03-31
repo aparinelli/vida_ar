@@ -6,7 +6,7 @@ def get_count_dataframe(df, col_name, new_name):
     count = df[col_name].value_counts()
     return pd.DataFrame({new_name: count.index, 'count': count.values})
 
-df = pd.read_csv('raw_data.csv')
+df = pd.read_csv('https://github.com/aparinelli/vida_ar/blob/main/raw_data.csv?raw=true')
 physical_df = get_count_dataframe(df, 'texto_q49', 'Sport per week')
 physical_df = physical_df.replace({'Sport per week': {
                             '0 días': '0 days',
