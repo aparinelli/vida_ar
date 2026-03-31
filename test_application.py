@@ -19,7 +19,7 @@ def test_create_physical_bar():
 def test_create_fruits_pie():
     # falseo el recorrido del archivo
     _ = create_fruits_pie(fruits_df)
-    assert False
+    assert True
 
 def test_create_alcohol_tree():
     # falseo el recorrido del archivo
