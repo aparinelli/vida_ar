@@ -131,8 +131,6 @@ alcohol_df = alcohol_df.replace({
 })
 
 
-print(df.groupby(['texto_q28']).size())
-
 
 # TODO:
 # - add alcohol df (texto_q34)
